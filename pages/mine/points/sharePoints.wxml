@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">我的积分</view>
+</cu-custom>
+<view class="padding margin-top flex flex-wrap align-center bg-white">
+    <view class="basis-xs">
+        <view class="cu-avatar xl" style="background-image:url({{userInfo.avatarUrl}});"></view>
+    </view>
+    <view class="basis-xl">
+        <view class="margin-left text-xl">昵称：
+      <text>{{userInfo.nickName}}</text>
+        </view>
+        <view class="margin-left text-xl">我的积分：
+      <text class="text-sb text-xl">{{points}}</text>
+        </view>
+    </view>
+</view>
+<view class="grid col-2 grid-square padding-sm">
+    <view class="cu-card case" wx:for="{{list}}">
+        <view class="cu-item shadow">
+            <view class="bg-img" style="background-image:url({{item.icon}});"></view>
+            <view class="cu-list">
+                <view class="cu-item">
+                    <view class="content flex-sub">
+                        <view class="cu-bar bg-white tabbar border shop">
+                            <view class="action text-sb">
+                                <view class="margin-bottom-sm text-grey">{{item.shopName}}</view> {{item.price}} 积分 剩{{item.numberCount!=0?item.nowCount:'999'}}件
+              </view>
+                            <button bindtap="shop" class="cu-btn bg-red shadow-blur" data-points="{{item}}">兑换</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<van-toast id="van-toast"></van-toast>
+<van-dialog id="van-dialog"></van-dialog>

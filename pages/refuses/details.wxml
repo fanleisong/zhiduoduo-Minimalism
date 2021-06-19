@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">{{title}}</view>
+</cu-custom>
+<view class="cu-bar bg-white">
+    <view class="action">
+        <text class="cuIcon-titles text-sb"></text>
+        <text class="text-xl text-bold text-sb">{{title}}</text>
+    </view>
+</view>
+<view class="solids-bottom padding-xs flex bg-white">
+    <view class="flex-sub">
+        <view class="padding">{{desc}}</view>
+    </view>
+</view>
+<view class="cu-list grid col-3">
+    <view class="cu-item" wx:for="{{icons}}">
+        <view>
+            <image mode="widthFix" src="{{item.icon}}" style="width:70%"></image>
+        </view>
+        <text>{{item.name}}</text>
+    </view>
+</view>

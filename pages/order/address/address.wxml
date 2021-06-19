@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">选择地址</view>
+</cu-custom>
+<view class="cu-list menu-avatar">
+    <view bindtap="check" bindtouchend="ListTouchEnd" bindtouchmove="ListTouchMove" bindtouchstart="ListTouchStart" class="cu-item {{modalName=='move-box-'+index?'move-cur':''}}" data-address="{{item}}" data-target="move-box-{{index}}" wx:for="{{address}}">
+        <view class="content">
+            <view class="text-grey">{{item.address}}</view>
+            <view class="text-gray text-sm">{{item.name}}</view>
+        </view>
+        <view class="action" wx:if="{{item.check}}">
+            <text class="cuIcon-check text-green text-xl"></text>
+        </view>
+        <view class="move">
+            <view bindtap="del" class="bg-red" data-id="{{item.id}}">删除</view>
+        </view>
+    </view>
+</view>
+<view class="padding-xl">
+    <button bindtap="choose" class="cu-btn block line-sb lg">
+        <text class="cuIcon-add"></text> 新增地址</button>
+</view>
+<login bindloginSuccess="loginSuccess" id="login"></login>
+<van-toast id="van-toast"></van-toast>
+<van-dialog id="van-dialog"></van-dialog>

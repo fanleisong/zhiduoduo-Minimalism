@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">提交反馈</view>
+</cu-custom>
+<form bindsubmit="formSubmit">
+    <view class="cu-form-group margin-top">
+        <view class="title">姓名</view>
+        <input name="name" placeholder="请输入姓名" value="{{user.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">手机号</view>
+        <input name="phone" placeholder="请输入手机号" type="number" value="{{user.phone}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <textarea maxlength="-1" name="text" placeholder="请输入反馈内容"></textarea>
+    </view>
+    <view class="padding bg-white solids-top">
+        <button class="cu-btn block bg-sb margin-tb-sm lg" disabled="{{disabled}}" formType="submit" type="">
+            <text class="cuIcon-loading2 iconfont-spin" wx:if="{{disabled!=''}}"></text> 提交</button>
+    </view>
+</form>
+<van-toast id="van-toast"></van-toast>

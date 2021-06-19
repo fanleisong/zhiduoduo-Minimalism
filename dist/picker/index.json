@@ -1,0 +1,16 @@
+{
+    "component": true,
+    "usingComponents": {
+        "picker-column": "../picker-column/index",
+        "loading": "../loading/index",
+        "cu-custom": "/colorui/components/cu-custom",
+        "van-toast": "/dist/toast/index",
+        "van-dialog": "/dist/dialog/index",
+        "van-notice-bar": "/dist/notice-bar/index",
+        "van-icon": "/dist/icon/index",
+        "van-divider": "/dist/divider/index",
+        "van-submit-bar": "/dist/submit-bar/index",
+        "van-rate": "/dist/rate/index",
+        "van-stepper": "/dist/stepper/index"
+    }
+}

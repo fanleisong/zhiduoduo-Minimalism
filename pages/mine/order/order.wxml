@@ -1,0 +1,95 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">我的订单</view>
+</cu-custom>
+<scroll-view scrollX class="bg-white nav">
+    <view class="flex text-center">
+        <view bindtap="tabSelect" class="cu-item flex-sub {{index==TabCur?'text-sb cur':''}}" data-id="{{index}}" wx:for="{{Tabs}}">{{item.name}}</view>
+    </view>
+</scroll-view>
+<block wx:if="{{TabCur==0}}">
+    <view bindtap="details" class="cu-list menu sm-border card-menu margin-top" data-order="{{item}}" wx:for="{{allList}}">
+        <view class="cu-item arrow">
+            <view class="content">
+                <image class="png" mode="aspectFit" src="/images/logo.jpg"></image>
+                <text class="text-grey">{{item.time}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">{{item.address}}</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text class="text-price">{{item.money?item.money:0}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content"></view>
+            <view class="action" wx:if="{{item.star}}">
+                <text class="cuIcon-favorfill text-yellow" wx:for="{{item.star}}"></text>
+            </view>
+            <view class="action" wx:if="{{!item.star&&item.status=='ORDER_COMMPLETE'}}">
+                <button bindtap="openStar" class="cu-btn line-sb shadow" data-order="{{item}}">
+                    <text class="cuIcon-favor"></text> 评价</button>
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center" customStyle="display:{{display1}}; margin:20px; text-align:center;">我是有底线的</van-divider>
+</block>
+<block wx:if="{{TabCur==1}}">
+    <view bindtap="details" class="cu-list menu sm-border card-menu margin-top" data-order="{{item}}" wx:for="{{finishList}}">
+        <view class="cu-item arrow">
+            <view class="content">
+                <image class="png" mode="aspectFit" src="/images/logo.jpg"></image>
+                <text class="text-grey">{{item.time}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">{{item.address}}</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text class="text-price">{{item.money?item.money:0}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content"></view>
+            <view class="action" wx:if="{{item.star}}">
+                <text class="cuIcon-favorfill text-yellow" wx:for="{{item.star}}"></text>
+            </view>
+            <view class="action" wx:if="{{!item.star}}">
+                <button bindtap="openStar" class="cu-btn line-sb shadow" data-order="{{item}}">
+                    <text class="cuIcon-favor"></text> 评价</button>
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center" customStyle="display:{{display2}}; margin:20px; text-align:center;">我是有底线的</van-divider>
+</block>
+<view class="cu-modal {{show?'show':''}}">
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="cu-dialog">
+            <view class="cu-bar bg-white justify-end">
+                <view class="content">您对该订单满意吗？</view>
+            </view>
+            <view class="padding-xl">
+                <van-rate bind:change="onChange" value="{{star}}"></van-rate>
+            </view>
+            <view class="cu-form-group">
+                <image src="/images/bianji.png"></image>
+                <input maxlength="-1" name="text" placeholder="说说此次服务的优点和美中不足的地方吧" value="{{text}}"></input>
+            </view>
+            <view class="cu-bar bg-white">
+                <view class="action margin-0 flex-sub">
+                    <button formType="reset">
+                        <view class="action margin-0 flex-sub text-grey solid-left">取消</view>
+                    </button>
+                    <button formType="submit">
+                        <view class="action margin-0 flex-sub text-sb solid-left">确定</view>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </form>
+</view>
+<van-toast id="van-toast"></van-toast>

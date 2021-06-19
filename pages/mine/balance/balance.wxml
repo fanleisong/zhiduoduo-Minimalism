@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">我的余额</view>
+</cu-custom>
+<view class="padding margin-top flex flex-wrap align-center bg-white">
+    <view class="basis-xs">
+        <view class="cu-avatar xl" style="background-image:url({{userInfo.avatarUrl}});"></view>
+    </view>
+    <view class="basis-xl">
+        <view class="margin-left text-xl">昵称：
+      <text>{{userInfo.nickName}}</text>
+        </view>
+        <view class="margin-left text-xl">可提现金额：
+      <text class="text-price text-sb text-xl">{{confirmBalance}} 元</text>
+        </view>
+        <view class="margin-left text-xl">用户编号：
+      <text class="text-sb text-xl">{{userid}}</text>
+        </view>
+    </view>
+</view>
+<form bindsubmit="formSubmit">
+    <radio-group class="block">
+        <view class="cu-form-group margin-top">
+            <view class="title">
+                <text class="cuIcon-weixin lg text-green"></text> 微信零钱提现</view>
+            <radio></radio>
+        </view>
+    </radio-group>
+    <view class="cu-form-group margin-top">
+        <view class="title">提现金额</view>
+        <input name="money" placeholder="请输入金额" type="digit" value="{{money}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">全部提现</view>
+        <switch bindchange="isAll" class="red sm"></switch>
+    </view>
+    <view class="padding bg-white solids-top">
+        <button class="cu-btn block bg-sb margin-tb-sm lg" disabled="{{disabled}}" formType="submit" type="">
+            <text class="cuIcon-loading2 iconfont-spin" wx:if="{{disabled!=''}}"></text> 申请提现</button>
+    </view>
+</form>
+<login bindloginSuccess="loginSuccess" id="login"></login>
+<van-toast id="van-toast"></van-toast>
+<van-dialog id="van-dialog"></van-dialog>

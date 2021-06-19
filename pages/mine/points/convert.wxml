@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">积分兑换</view>
+</cu-custom>
+<view class="cu-bar bg-white">
+    <view class="action">
+        <text class="cuIcon-title text-sb"></text>
+        <text>商品信息</text>
+    </view>
+</view>
+<view class="cu-card case dynamic no-card">
+    <view class="cu-item shadow">
+        <view class="image">
+            <image mode="widthFix" src="{{detail.icon}}"></image>
+        </view>
+        <view class="text-content">{{detail.description}}</view>
+        <view class="text-gray text-sm text-right padding">
+            <text class="text-price margin-lr-xs text-sb text-lg"> {{detail.price}} 积分</text>
+        </view>
+    </view>
+</view>
+<view class="cu-form-group margin-top">
+    <view class="title">兑换数量</view>
+    <van-stepper bind:change="onChange" inputWidth="40px" value="{{num}}"></van-stepper>
+</view>
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-sb"></text>
+        <text>收货信息</text>
+    </view>
+</view>
+<form>
+    <view class="cu-form-group">
+        <view class="title">联系人</view>
+        <input bindinput="changeName" name="contacter" placeholder="请填写联系人姓名" value="{{userDetail.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">联系电话</view>
+        <input bindinput="changePhone" name="phone" placeholder="请填写联系电话" type="number" value="{{userDetail.phone}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">取货地址</view>
+        <input bindinput="changeAddress" bindtap="goAddress" name="poi" placeholder="请选择取货地址" value="{{address.address}}"></input>
+        <text class="cuIcon-locationfill text-sb"></text>
+    </view>
+</form>
+<van-toast id="van-toast"></van-toast>
+<van-submit-bar bind:submit="onSubmit" buttonText="确认兑换" disabled="{{disabled}}" loading="{{loading}}" price="{{sum}}" tip="请确认您的收货信息" tipIcon="info-o"></van-submit-bar>

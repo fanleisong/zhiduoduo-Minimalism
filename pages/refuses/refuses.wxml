@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">垃圾分类</view>
+</cu-custom>
+<view class="bg-img bg-white"></view>
+<view class="cu-list grid col-2 no-border">
+    <view bindtap="goRefuses" class="cu-item" data-id="{{item.id}}" wx:for="{{refuses}}">
+        <view>
+            <image src="{{item.img}}"></image>
+        </view>
+    </view>
+</view>

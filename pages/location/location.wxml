@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">选择城市</view>
+</cu-custom>
+<scroll-view scrollY class="indexes" enableBackToTop="true" scrollIntoView="indexes-{{listCurID}}" scrollWithAnimation="true" style="height:calc(100vh - 50px)">
+    <block wx:for="{{list}}">
+        <view class="padding indexItem-{{item.index}}" data-index="{{item.index}}" id="indexes-{{item.index}}">{{item.index}}</view>
+        <view class="cu-list menu-avatar no-padding">
+            <view bindtap="chooseCity" class="cu-item" data-city="{{city}}" wx:for="{{item.citys}}" wx:for-item="city">
+                <view class="cu-avatar round lg">{{item.index}}</view>
+                <view class="content">
+                    <view class="text-grey">{{city.name}}</view>
+                    <view class="text-gray text-sm">{{city.childrens}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<view class="indexBar" style="height:calc(100vh - 50px)">
+    <view bindtouchend="tEnd" bindtouchstart="tStart" catchtouchmove="tMove" class="indexBar-box">
+        <view bindtouchend="setCur" bindtouchstart="getCur" class="indexBar-item" id="{{index}}" wx:for="{{indexes}}">{{indexes[index]}}</view>
+    </view>
+</view>
+<view class="indexToast" hidden="{{hidden}}">
+  {{listCur}}
+</view>

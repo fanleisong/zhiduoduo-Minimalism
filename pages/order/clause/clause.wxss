@@ -1,0 +1,11 @@
+.text-hui {
+    color: #2f4050;
+}
+
+.indent {
+    text-indent: 60rpx;
+}
+
+.text-bold {
+    font-weight: 600;
+}

@@ -1,0 +1,7 @@
+.van-cell-group__title {
+    padding: 15px 15px 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999;
+    color: var(--gray-dark,#999);
+}

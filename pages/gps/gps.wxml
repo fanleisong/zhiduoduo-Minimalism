@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">车辆实时位置</view>
+</cu-custom>
+<map bindcallouttap="showSheet" id="myMap" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{scale}}" style="width: 100%; height: 100vh; z-index:99"></map>
+<van-toast id="van-toast"></van-toast>

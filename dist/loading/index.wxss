@@ -1,0 +1,143 @@
+.van-loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.van-loading__wrapper {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    line-height: 0;
+}
+
+.van-loading--vertical {
+    flex-direction: column;
+}
+
+.van-loading__spinner {
+    position: relative;
+    z-index: -1;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    animation: van-rotate .8s linear infinite;
+}
+
+.van-loading__spinner--spinner {
+    animation-timing-function: steps(12);
+}
+
+.van-loading__spinner--circular {
+    border: 1px solid transparent;
+    border-top-color: initial;
+    border-radius: 100%;
+}
+
+.van-loading__text {
+    margin-left: 8px;
+    color: #969799;
+}
+
+.van-loading__text--vertical {
+    margin: 8px 0 0;
+}
+
+.van-loading__dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.van-loading__dot:before {
+    display: block;
+    width: 2px;
+    height: 25%;
+    margin: 0 auto;
+    background-color: currentColor;
+    border-radius: 40%;
+    content: " ";
+}
+
+.van-loading__dot:first-of-type {
+    transform: rotate(30deg);
+    opacity: 1;
+}
+
+.van-loading__dot:nth-of-type(2) {
+    transform: rotate(60deg);
+    opacity: .9375;
+}
+
+.van-loading__dot:nth-of-type(3) {
+    transform: rotate(90deg);
+    opacity: .875;
+}
+
+.van-loading__dot:nth-of-type(4) {
+    transform: rotate(120deg);
+    opacity: .8125;
+}
+
+.van-loading__dot:nth-of-type(5) {
+    transform: rotate(150deg);
+    opacity: .75;
+}
+
+.van-loading__dot:nth-of-type(6) {
+    transform: rotate(180deg);
+    opacity: .6875;
+}
+
+.van-loading__dot:nth-of-type(7) {
+    transform: rotate(210deg);
+    opacity: .625;
+}
+
+.van-loading__dot:nth-of-type(8) {
+    transform: rotate(240deg);
+    opacity: .5625;
+}
+
+.van-loading__dot:nth-of-type(9) {
+    transform: rotate(270deg);
+    opacity: .5;
+}
+
+.van-loading__dot:nth-of-type(10) {
+    transform: rotate(300deg);
+    opacity: .4375;
+}
+
+.van-loading__dot:nth-of-type(11) {
+    transform: rotate(330deg);
+    opacity: .375;
+}
+
+.van-loading__dot:nth-of-type(12) {
+    transform: rotate(1turn);
+    opacity: .3125;
+}
+
+@-webkit-keyframes van-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes van-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}

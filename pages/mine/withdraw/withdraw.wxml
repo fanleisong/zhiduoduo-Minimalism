@@ -1,0 +1,91 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">提现记录</view>
+</cu-custom>
+<scroll-view scrollX class="bg-white nav">
+    <view class="flex text-center">
+        <view bindtap="tabSelect" class="cu-item flex-sub {{index==TabCur?'text-sb cur':''}}" data-id="{{index}}" wx:for="{{Tabs}}">{{item.name}}</view>
+    </view>
+</scroll-view>
+<block wx:if="{{TabCur==0}}">
+    <view class="cu-list menu sm-border card-menu margin-top" wx:for="{{allList}}">
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现时间</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.time}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现类型</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.withdrawType=='WITHDRAW_TYPE_BANK'?'银行卡提现':'微信提现'}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">金额</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text class="text-price ">{{item.money?item.money:0}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现状态</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.operationStatus=='OPERATION_STATUS_COMMPLETE'?'已完成':item.operationStatus=='OPERATION_STATUS_PENDING'?'待处理':item.operationStatus=='OPERATION_STATUS_TRANSFER'?'转账中':item.operationStatus=='WECHAT_SINGLE_OVER'?'预计工作时间2到12小时内到账':item.operationStatus=='WECHAT_TOTAL_OVER'?'预计工作时间2到12小时内到账':item.operationStatus=='OPERATION_STATUS_FAIL'?'转账失败':item.operationStatus=='WECHAT_STATUS_TRANSFER'?'微信转账中':'不通过'}}</text>
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center" customStyle="display:{{display1}}; margin:20px; text-align:center;">我是有底线的</van-divider>
+</block>
+<block wx:if="{{TabCur==1}}">
+    <view class="cu-list menu sm-border card-menu margin-top" wx:for="{{finishList}}">
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现时间</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.time}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现类型</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.withdrawType=='WITHDRAW_TYPE_BANK'?'银行卡提现':'微信提现'}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">金额</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text class="text-price ">{{item.money?item.money:0}}</text>
+            </view>
+        </view>
+        <view class="cu-item">
+            <view class="content">
+                <text class="text-grey">提现状态</text>
+            </view>
+            <view class="action">
+                <view class="cu-avatar-group"></view>
+                <text>{{item.operationStatus=='OPERATION_STATUS_COMMPLETE'?'已完成':item.operationStatus=='OPERATION_STATUS_PENDING'?'待处理':item.operationStatus=='OPERATION_STATUS_TRANSFER'?'转账中':item.operationStatus=='WECHAT_SINGLE_OVER'?'预计工作时间2到12小时内到账':item.operationStatus=='WECHAT_TOTAL_OVER'?'预计工作时间2到12小时内到账':item.operationStatus=='OPERATION_STATUS_FAIL'?'转账失败':item.operationStatus=='WECHAT_STATUS_TRANSFER'?'微信转账中':'不通过'}}</text>
+            </view>
+        </view>
+    </view>
+    <van-divider contentPosition="center" customStyle="display:{{display2}}; margin:20px; text-align:center;">我是有底线的</van-divider>
+</block>
+<van-toast id="van-toast"></van-toast>

@@ -1,0 +1,19 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom",
+        "van-toast": "/dist/toast/index",
+        "van-dialog": "/dist/dialog/index",
+        "van-notice-bar": "/dist/notice-bar/index",
+        "van-icon": "/dist/icon/index",
+        "van-divider": "/dist/divider/index",
+        "van-submit-bar": "/dist/submit-bar/index",
+        "van-rate": "/dist/rate/index",
+        "van-stepper": "/dist/stepper/index"
+    },
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d71318",
+    "navigationBarTitleText": "纸先生再生资源回收",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+}

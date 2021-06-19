@@ -1,0 +1,26 @@
+<scroll-view scrollY class="scrollPage">
+    <view class="UCenter-bg bg-sb">
+        <view class="text-center" wx:if="{{!hasUserInfo&&canIUse}}">
+            <image class="cu-avatar xl round margin-left" src="/images/no-login.png"></image>
+            <view class="padding">
+                <button bindtap="goLogin" class="cu-btn round bg-white shadow"> 点击登录 </button>
+            </view>
+        </view>
+        <view class="text-center" wx:else>
+            <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatar}})"></view>
+            <view class="padding">{{userInfo.nickname}}</view>
+        </view>
+        <image class="gif-wave" mode="scaleToFill" src="https://res.huangxiaopeng.cn/images/wave.gif"></image>
+    </view>
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+        <view bindtap="repeat" class="cu-item arrow" data-text="{{item.text}}" data-url="{{item.url}}" wx:for="{{myList}}">
+            <viww class="content" hoverClass="none" url="{{item.url}}">
+                <text class="{{item.icon}}" wx:if="{{item.type=='icon'}}"></text>
+                <image class="png" mode="aspectFit" src="{{item.img}}" wx:else></image>
+                <text class="text-grey">{{item.text}}</text>
+            </viww>
+        </view>
+    </view>
+    <view class="cu-tabbar-height"></view>
+</scroll-view>
+<login bindloginSuccess="loginSuccess" id="login"></login>

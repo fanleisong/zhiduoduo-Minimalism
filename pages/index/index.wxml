@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-white" isLocation="{{true}}">
+    <view slot="locationText">{{cityName}}</view>
+    <view slot="content">纸多多极简生活</view>
+</cu-custom>
+<view class="bg-img bg-white"></view>
+<view class="cu-bar">
+    <view class="action text-white">
+        <text>[ 一键下单 ]</text>
+    </view>
+</view>
+<view class="cu-list grid col-3 no-border margin-top">
+    <view bindtap="toOrders" class="cu-item" data-type="{{item.id}}" wx:for="{{wasteList}}">
+        <view>
+            <image src="{{item.url}}"></image>
+        </view>
+        <text class="text-white">{{item.name}}</text>
+    </view>
+    <view bindtap="toPrice" class="cu-item">
+        <view>
+            <image src="/images/price.png"></image>
+        </view>
+        <text class="text-white">价格列表</text>
+    </view>
+    <view bindtap="toComment" class="cu-item">
+        <view>
+            <image src="/images/comment.png"></image>
+        </view>
+        <text class="text-white">订单评价</text>
+    </view>
+</view>
+<view class="cu-bar">
+    <view class="action text-white">
+        <text>[ 服务中心 ]</text>
+    </view>
+</view>
+<view class="cu-list grid col-3 no-border margin-top" style="padding-bottom: 168rpx;">
+    <view bindtap="toServices" class="cu-item" data-url="{{item.url}}" wx:for="{{service}}">
+        <view>
+            <image src="{{item.img}}"></image>
+        </view>
+        <text class="text-white">{{item.text}}</text>
+    </view>
+</view>

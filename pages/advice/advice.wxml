@@ -1,0 +1,34 @@
+<cu-custom bgColor="bg-sb">
+    <view slot="content">建议反馈</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom {{isCard?'margin-top':''}}">
+    <view class="action">
+        <text class="cuIcon-title text-sb"></text> 反馈列表
+  </view>
+    <view class="action">
+        <button bindtap="question" class="cu-btn round bg-sb shadow">
+            <text class="cuIcon-upload"></text> 提交反馈</button>
+    </view>
+</view>
+<view class="cu-chat bg-white">
+    <view class="solids-bottom" wx:for="{{list}}">
+        <view class="cu-item self">
+            <view class="main">
+                <view class="content bg-green shadow">
+                    <text>{{item.text}}</text>
+                </view>
+            </view>
+            <view class="cu-avatar radius" style="background-image:url({{userInfo.avatarUrl}});"></view>
+            <view class="date">{{item.subTime}}</view>
+        </view>
+        <view class="cu-item" wx:if="{{item.returnText!=null}}">
+            <image class="cu-avatar radius" src="/images/logo.jpg"></image>
+            <view class="main">
+                <view class="content bg-grey shadow">
+                    <text>{{item.returnText}}</text>
+                </view>
+            </view>
+            <view class="date" wx:if="{{item.returnTime!=null}}">{{item.returnTime}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+.cu-card>.cu-item {
+    margin: 5rpx;
+}
+
+.bg-img {
+    height: 240rpx;
+}
+
+.cu-bar.tabbar.shop .action {
+    width: 200rpx;
+}

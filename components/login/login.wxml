@@ -1,0 +1,5 @@
+<van-dialog useSlot bind:close="onClose" bind:getuserinfo="getUserInfo" cancelButtonText="暂不登录" confirmButtonOpenType="getUserInfo" confirmButtonText="立即登录" show="{{show}}" showCancelButton="{{cancel}}" title="请登录后再继续操作">
+    <view class="flex padding justify-center">
+        <image class="cu-avatar xl round" src="/images/logo.jpg"></image>
+    </view>
+</van-dialog>

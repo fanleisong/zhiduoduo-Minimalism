@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">用户下单</view>
+</cu-custom>
+<form bindsubmit="formSubmit">
+    <view class="cu-form-group">
+        <view class="title">下单时间</view>
+        <picker bindchange="changeTimeIndex" bindcolumnchange="changeTime" mode="multiSelector" name="time" range="{{dateTimeArray}}" value="{{dateTimeIndex}}">
+            <view class="picker">
+        {{dateTimeArray[0][ dateTimeIndex[0] ]}}-{{dateTimeArray[1][ dateTimeIndex[1] ]}}-{{dateTimeArray[2][ dateTimeIndex[2] ]}} {{dateTimeArray[3][ dateTimeIndex[3] ]}}:{{dateTimeArray[4][ dateTimeIndex[4] ]}}
+      </view>
+        </picker>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">联系人姓名</view>
+        <input name="contacter" placeholder="请填写联系人姓名" value="{{userDetail.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">联系电话</view>
+        <input name="phone" placeholder="请填写联系电话" type="number" value="{{userDetail.phone}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">取货地址</view>
+        <input bindtap="goAddress" name="poi" placeholder="请选择取货地址" value="{{address.address}}"></input>
+        <text class="cuIcon-locationfill text-sb"></text>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">详细地址</view>
+        <input name="poiDetail" placeholder="请填写详细地址" value="{{address.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">废品类型</view>
+        <picker bindchange="wasteChange" range="{{wasteArray}}" value="{{wasteIndex}}">
+            <view class="picker">{{wasteArray[wasteIndex]}}</view>
+        </picker>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">公益赠送</view>
+        <switch class="red sm" name="isFree"></switch>
+    </view>
+    <view class="padding bg-white border-top">
+        <button class="cu-btn block bg-sb margin-tb-sm lg" disabled="{{disabled}}" formType="submit" type="">
+            <text class="cuIcon-loading2 iconfont-spin" wx:if="{{disabled}}"></text> 确认下单</button>
+        <view class="flex-sub text-center">
+            <view class="solid-bottom text-sm padding-xs">
+                <text class="text-gray">确认下单将自动默认：</text>
+                <navigator class="text-gray" url="/pages/order/clause/clause">《纸先生上门回收免责条款》</navigator>
+            </view>
+        </view>
+    </view>
+</form>
+<login bindloginSuccess="loginSuccess" id="login"></login>
+<van-toast id="van-toast"></van-toast>
+<van-dialog id="van-dialog"></van-dialog>

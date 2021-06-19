@@ -1,0 +1,44 @@
+.van-divider {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    color: #999;
+    font-size: 14px;
+    line-height: 24px;
+    border: 0 solid #eee;
+}
+
+.van-divider:after,.van-divider:before {
+    display: block;
+    flex: 1;
+    box-sizing: border-box;
+    height: 1px;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: 1px 0 0;
+}
+
+.van-divider:before {
+    content: "";
+}
+
+.van-divider--hairline:after,.van-divider--hairline:before {
+    transform: scaleY(.5);
+}
+
+.van-divider--dashed {
+    border-style: dashed;
+}
+
+.van-divider--center:before,.van-divider--left:before,.van-divider--right:before {
+    margin-right: 16px;
+}
+
+.van-divider--center:after,.van-divider--left:after,.van-divider--right:after {
+    margin-left: 16px;
+    content: "";
+}
+
+.van-divider--left:before,.van-divider--right:after {
+    max-width: 10%;
+}

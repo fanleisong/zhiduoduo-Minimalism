@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-sb" city="{{citynum}}" isCustom="{{true}}" isRefresh="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">微信绑定</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-sb"></text> 绑定进度
+  </view>
+</view>
+<view class="bg-white padding">
+    <view class="cu-steps">
+        <view class="cu-item {{current>=1?'text-sb':''}}">
+            <text class="num" data-index="{{current+1}}"></text>
+            <image class="cu-avatar round" src="/images/logo.jpg"></image>
+            <view class="text-grey margin-top">回收员{{phone}}</view>
+        </view>
+        <view class="cu-item {{current>=2?'text-sb':''}}">
+            <text class="num" data-index="{{current+1}}"></text>
+            <image class="cu-avatar round" src="{{user.avatarUrl}}"></image>
+            <view class="text-grey margin-top">{{user.nickName}}</view>
+        </view>
+    </view>
+    <button bindtap="bind" class="cu-btn block bg-sb margin lg" disabled="{{disabled}}" type="">
+        <text class="cuIcon-order"></text> {{btnName}}</button>
+</view>
+<modal cancelText="" confirmText="" hidden="{{hidden}}" title="请返回APP继续操作">
+    <button appParameter="{{true}}" binderror="launchAppError" class="rBtn" openType="launchApp" type="primary">确定</button>
+</modal>
+<login bindloginSuccess="loginSuccess" id="login"></login>
+<van-toast id="van-toast"></van-toast>
+<van-dialog id="van-dialog"></van-dialog>

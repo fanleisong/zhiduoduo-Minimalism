@@ -1,0 +1,24 @@
+.van-rate {
+    display: inline-flex;
+    user-select: none;
+}
+
+.van-rate__item {
+    position: relative;
+    padding: 0 2px;
+    padding: 0 var(--rate-horizontal-padding,2px);
+}
+
+.van-rate__icon {
+    display: block;
+    height: 1em;
+}
+
+.van-rate__icon--half {
+    position: absolute;
+    top: 0;
+    width: .5em;
+    overflow: hidden;
+    left: 2px;
+    left: var(--rate-horizontal-padding,2px);
+}

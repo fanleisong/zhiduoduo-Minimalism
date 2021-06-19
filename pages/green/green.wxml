@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-sb">
+    <view slot="content">绿色行动</view>
+</cu-custom>
+<view class="bg-white">
+    <image class="margin-bottom top" src="/images/green/head.jpg"></image>
+    <view class="margin-left margin-right flex align-center border">
+        <view class="flex-sub text-center">
+            <view class="text-xl padding-sm">
+                <text class="text-black text-bold">您节省的资源如下：</text>
+            </view>
+        </view>
+    </view>
+    <view class="margin-left margin-right flex flex-wrap align-center text-center border-blr" hidden="{{hidden}}" wx:for="{{energyList}}">
+        <view class="basis-sm">{{item.wasteName}}</view>
+        <view class="basis-lg">
+            <view class="padding-sm border-left border-bottom">{{item.energyMemo}}</view>
+            <view class="padding-sm border-left">{{item.energyCarbonMemo}}</view>
+        </view>
+    </view>
+    <image class="margin-top footer" src="/images/green/foot.jpg"></image>
+</view>

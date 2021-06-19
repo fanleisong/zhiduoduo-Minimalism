@@ -1,0 +1,67 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">订单详情</view>
+</cu-custom>
+<view class="cu-list menu sm-border card-menu margin-top text-grey">
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-time"></text>
+            <text>提交时间</text>
+        </view>
+        <view class="action">
+            <text>{{order.time}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-like"></text>
+            <text>公益赠送</text>
+        </view>
+        <view class="action">
+            <text class="{{order.isFree?'text-green':'text-grey'}}">{{order.isFree?'是':'否'}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-recharge"></text>
+            <text>订单金额</text>
+        </view>
+        <view class="action">
+            <text class="text-price text-xl">{{order.money?order.money:0}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-rank"></text>
+            <text>订单状态</text>
+        </view>
+        <view class="action">
+            <text>{{order.status=='ORDER_COMMPLETE'?'已完成':order.status=='ORDER_SUBMIT'?'待处理':order.status=='ORDER_CANCEL'?'用户已取消':order.status=='ORDER__RECYCLE_CANCEL'?'回收员已取消':order.status=='ORDER_ADMIN_CANCEL'?'管理员已取消':order.status=='ORDER_RECEIVE'?'已接单':'已确认'}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <text class="cuIcon-location"></text>
+            <text>{{order.address}}</text>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content padding-tb-sm">
+            <view>
+                <text class="cuIcon-post margin-right-xs"></text> 订单详情</view>
+            <view>
+                <view class="flex margin-top">
+                    <view class="flex-treble">类型</view>
+                    <view class="flex-sub">单价</view>
+                    <view class="flex-sub">重量</view>
+                    <view class="flex-sub">金额</view>
+                </view>
+                <view class="flex" wx:for="{{order.list}}" wx:for-item="l">
+                    <view class="flex-treble">{{l.wasteName}}</view>
+                    <view class="flex-sub">{{l.money?l.money:0}}</view>
+                    <view class="flex-sub">{{l.realWeight?l.realWeight:0}}</view>
+                    <view class="flex-sub">{{l.total?l.total:0}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

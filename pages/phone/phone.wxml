@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">客服电话</view>
+</cu-custom>
+<view class="cu-list menu sm-border card-menu margin-top text-grey">
+    <view bindtap="call" class="cu-item" data-phone="{{detail.phone}}">
+        <view class="content">
+            <text class="cuIcon-phone"></text>
+            <text>客服电话</text>
+        </view>
+        <view class="action">
+            <text>{{detail.phone}}</text>
+        </view>
+    </view>
+</view>
+<login bindloginSuccess="loginSuccess" id="login"></login>

@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/green/green",
+    "pages/advice/advice",
+    "pages/advice/question",
+    "pages/mine/mine",
+    "pages/location/location",
+    "pages/refuses/refuses",
+    "pages/order/order",
+    "pages/order/clause/clause",
+    "pages/order/address/address",
+    "pages/mine/price/price",
+    "pages/mine/balance/balance",
+    "pages/mine/points/points",
+    "pages/mine/points/sharePoints",
+    "pages/mine/order/order",
+    "pages/mine/withdraw/withdraw",
+    "pages/mine/order/details",
+    "pages/mine/points/convert",
+    "pages/mine/points/shareConvert",
+    "pages/bind/bind",
+    "pages/order/clerkOrder/clerkOrder",
+    "pages/gps/gps",
+    "pages/order/accept/accept",
+    "pages/game/game",
+    "pages/refuses/details",
+    "pages/clerkorders/order",
+    "pages/phone/phone"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "纸先生再生资源回收",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#aaaaaa",
+    "selectedColor": "#d71318",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home_cur.png"
+      },
+      {
+        "pagePath": "pages/green/green",
+        "text": "绿色行动",
+        "iconPath": "images/tabbar/green.png",
+        "selectedIconPath": "images/tabbar/green_cur.png"
+      },
+      {
+        "pagePath": "pages/advice/advice",
+        "text": "反馈建议",
+        "iconPath": "images/tabbar/advice.png",
+        "selectedIconPath": "images/tabbar/advice_cur.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "images/tabbar/mine.png",
+        "selectedIconPath": "images/tabbar/mine_cur.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

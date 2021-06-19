@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-sb" isCustom="{{true}}" pageLength="{{pageLength}}">
+    <view slot="content">回收价格表</view>
+</cu-custom>
+<van-notice-bar leftIcon="volume-o" text="{{m1.delHtmlTag(notice)}}"></van-notice-bar>
+<view class="cu-list menu-avatar solids-top">
+    <view class="cu-item solids-bottom" wx:for="{{priceList}}">
+        <view class="content">
+            <view class="text-black">{{item.wasteName}}</view>
+            <view class="text-grey text-sm flex">
+                <text>{{item.remark}}</text>
+            </view>
+        </view>
+        <view class="action">
+            <view class="text-price text-black text-xl">{{item.price}}</view>
+        </view>
+    </view>
+</view>
+<wxs module="m1">
+var delHtmlTag = (function(str) {
+    var reg = getRegExp("\x3c[^\x3e]+\x3e", "g");
+    var reg2 = getRegExp("\x26nbsp;", "g");
+    var result = str.replace(reg, '');
+    result = result.replace(reg2, '\t');
+    return (result)
+});
+module.exports.delHtmlTag = delHtmlTag;
+</wxs>
