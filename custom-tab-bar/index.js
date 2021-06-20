@@ -8,12 +8,7 @@ Component({
             iconPath: "/images/tabbar/home.png",
             selectedIconPath: "/images/tabbar/home_cur.png",
             text: "首页"
-        }, {
-            pagePath: "/pages/green/green",
-            iconPath: "/images/tabbar/green.png",
-            selectedIconPath: "/images/tabbar/green_cur.png",
-            text: "绿色行动"
-        }, {
+        },  {
             pagePath: "/pages/advice/advice",
             iconPath: "/images/tabbar/advice.png",
             selectedIconPath: "/images/tabbar/advice_cur.png",

@@ -204,11 +204,11 @@ Page({
         });
     },
     order: function(e) {
-        var n = wx.getStorageSync("city"), r = this;
+       var n = wx.getStorageSync("city"), r = this, uu =wx.getStorageSync("userInfo");
         r.setData({
             disabled: !0
-        }), i.Util.ajax(n.interfaceUrl + "wxWeb/get_orders_form.do", "POST", e, !0).then(function(t) {
-            t.result ? (wx.setStorageSync("order_user", {
+        }),i.Util.ajax(n.interfaceUrl + "order/add", "POST", {e,uu}, !0).then(function(t) {
+            t.errno==0 ? (wx.setStorageSync("order_user", {
                 name: e.contacter,
                 phone: e.phone
             }), a.default.alert({

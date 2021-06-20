@@ -22,16 +22,17 @@ Page({
     },
     init: function() {
         var t = this, n = wx.getStorageSync("city"), a = wx.getStorageSync("userInfo");
-        "" != a ? i.Util.ajax(n.interfaceUrl + "wxWeb/get_my_address.do", "POST", {
+        "" != a ? i.Util.ajax(n.interfaceUrl + "address/get", "POST", {
             openid: a.openid
         }, !0).then(function(i) {
-            if (i.result) {
+            console.log(i.data)
+            if (i.data) {
                 var n = [];
                 i.data.forEach(function(t) {
                     var e = {
                         id: t.id,
-                        name: t.poi,
-                        address: t.poiDetail,
+                        name: t.name,
+                        address: t.address,
                         longitude: parseFloat(t.longitude),
                         latitude: parseFloat(t.latitude),
                         cityNum: t.cityNum,
@@ -55,16 +56,16 @@ Page({
         i.getLocationAuth().then(function(n) {
             n.authSetting["scope.userLocation"] ? wx.chooseLocation({
                 success: function(n) {
-                    console.log(n);
+                    console.log(n)
                     var a = {
                         poi: n.name,
                         poiDetail: n.address,
                         longitude: n.longitude + "",
                         latitude: n.latitude + "",
                         openid: wx.getStorageSync("userInfo").openid
-                    }, o = wx.getStorageSync("city");
-                    i.Util.ajax(o.interfaceUrl + "wxWeb/add_my_address.do", "POST", a, !0).then(function(i) {
-                        i.result ? t.init() : e.default.fail("地址添加失败");
+                    },o = wx.getStorageSync("city");
+                    i.Util.ajax(o.interfaceUrl + "address/add", "POST", a, !0).then(function(i) {
+                        i.errno==0 ? t.init() : e.default.fail("地址添加失败");
                     }).catch(function(t) {
                         console.log(t), e.default.fail("地址添加错误");
                     });
@@ -100,11 +101,11 @@ Page({
             success: function(a) {
                 if (a.confirm) {
                     var o = t.currentTarget.dataset.id, c = wx.getStorageSync("city");
-                    i.Util.ajax(c.interfaceUrl + "wxWeb/del_my_address.do", "POST", {
+                    i.Util.ajax(c.interfaceUrl + "address/del", "POST", {
                         id: o,
                         openid: wx.getStorageSync("userInfo").openid
                     }, !0).then(function(t) {
-                        t.result ? n.init() : e.default.fail("地址删除失败");
+                        t.errno==0 ? n.init() : e.default.fail("地址删除失败");
                     }).catch(function(t) {
                         console.log(t), e.default.fail("地址删除错误");
                     });
@@ -167,6 +168,7 @@ Page({
     },
     isChangeCity: function(t) {
         console.log(t);
+        console.log("================");
         var e = this;
         t.inList.length > 0 ? wx.showModal({
             title: "提示",

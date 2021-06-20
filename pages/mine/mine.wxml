@@ -7,8 +7,8 @@
             </view>
         </view>
         <view class="text-center" wx:else>
-            <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatar}})"></view>
-            <view class="padding">{{userInfo.nickname}}</view>
+            <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatar||userInfo.avatarUrl}})"></view>
+            <view class="padding">{{userInfo.nickname||userInfo.nickName}}</view>
         </view>
         <image class="gif-wave" mode="scaleToFill" src="https://res.huangxiaopeng.cn/images/wave.gif"></image>
     </view>

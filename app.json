@@ -48,12 +48,6 @@
         "selectedIconPath": "images/tabbar/home_cur.png"
       },
       {
-        "pagePath": "pages/green/green",
-        "text": "绿色行动",
-        "iconPath": "images/tabbar/green.png",
-        "selectedIconPath": "images/tabbar/green_cur.png"
-      },
-      {
         "pagePath": "pages/advice/advice",
         "text": "反馈建议",
         "iconPath": "images/tabbar/advice.png",
@@ -67,5 +61,10 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+    "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+    },
   "sitemapLocation": "sitemap.json"
 }

@@ -5,29 +5,29 @@
     <view class="solids-bottom padding-xs flex align-center">
         <view class="flex-sub text-center">
             <view class="solid-bottom text-xxl padding">
-                <text class="text-hui text-bold">纸先生法律声明</text>
+                <text class="text-hui text-bold">纸多多法律声明</text>
             </view>
         </view>
     </view>
     <view class="solids-bottom padding-xs">
         <view class="solid-bottom text-xl padding-xs">
-            <text class="text-hui text-bold">纸先生回收平台法理义务解释：</text>
+            <text class="text-hui text-bold">纸多多回收平台法理义务解释：</text>
         </view>
         <view class="solid-bottom text-xl padding-xs">
-            <view class="text-hui text-bold indent">纸先生回收平台：诚信经营、高效回收、是您身边的回收专家！</view>
+            <view class="text-hui text-bold indent">纸多多回收平台：诚信经营、高效回收、是您身边的回收专家！</view>
         </view>
         <view class="solid-bottom text-xl padding-xs">
             <text class="text-hui text-bold">平台提示</text>
         </view>
         <view class="solid-bottom text-lg padding-xs">
             <view class="text-hui indent">
-                <text class="cuIcon-title text-hui"></text>凡使用纸先生回收服务的用户须明白，用户通过纸先生回收公众平台预约上门回收服务与平台达成合作意向后， 用户个人将对其所提供的回收物品及其所做出的行为承担全部责任，个人回收员与用户做出的任何与平台规则不一致的承诺与本站平台无关，本平台不作为责任承担方。</view>
+                <text class="cuIcon-title text-hui"></text>凡使用纸多多回收服务的用户须明白，用户通过纸多多回收公众平台预约上门回收服务与平台达成合作意向后， 用户个人将对其所提供的回收物品及其所做出的行为承担全部责任，个人回收员与用户做出的任何与平台规则不一致的承诺与本站平台无关，本平台不作为责任承担方。</view>
         </view>
         <view class="solid-bottom text-xl padding-xs">
             <text class="text-hui text-bold">重要声明</text>
         </view>
         <view class="solid-bottom text-lg padding-xs">
-            <view class="text-hui text-bold indent">用户通过纸先生回收服务具备如下条件：</view>
+            <view class="text-hui text-bold indent">用户通过纸多多回收服务具备如下条件：</view>
             <view class="text-hui indent">
                 <text class="cuIcon-title text-hui"></text>您对商品拥有合法、完整的处分权利。</view>
             <view class="text-hui indent">
@@ -60,7 +60,7 @@
                 <text class="cuIcon-title text-hui"></text>用户已谅解并同意，本平台的回收服务的信息或回收价格可能与实际信息的变化不能随时保持精确的一致，若您在本平台上获取的信息与本平台在回收过程中提供的信息不一致的，以最终成交价格为准。
       </view>
             <view class="text-hui indent">
-                <text class="cuIcon-title text-hui"></text>本平台只提供回收运输服务，一切交易将视为客户自行自愿交易，对交易风险由交易双方自行负责，纸先生平台对此不承担任何保证责任。
+                <text class="cuIcon-title text-hui"></text>本平台只提供回收运输服务，一切交易将视为客户自行自愿交易，对交易风险由交易双方自行负责，纸多多平台对此不承担任何保证责任。
       </view>
         </view>
         <view class="solid-bottom text-lg padding">

@@ -59,7 +59,7 @@ Component({
             var t = wx.getStorageSync("city");
             var a = this;
             "" != t && (console.log(t.interfaceUrl), e.Util.ajax(t.interfaceUrl + "waste/findtype", "GET", null, !0).then(function(e) {
-                
+                console.log(e)
                 e.errno==0 ? (a.filter(e.data), wx.setStorageSync("wasteList", e.data)) : (wx.setStorageSync("wasteList", ""), 
                 a.setData({
                     wasteList: []
@@ -76,6 +76,7 @@ Component({
         toOrders: function(t) {
             if ("" != wx.getStorageSync("userInfo")) {
                 var a = t.currentTarget.dataset.type;
+                console.log(a)
                 wx.navigateTo({
                     url: "/pages/order/order?type=" + a
                 });

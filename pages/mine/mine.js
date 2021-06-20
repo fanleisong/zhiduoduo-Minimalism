@@ -100,7 +100,7 @@ Component({
                           code: this.data.code,
                           userInfo: res
                         }, !0).then(res => {
-                            
+                        
                         if (res.errno !== 0) {
                           wx.showToast({
                             title: '微信登录失败',
@@ -110,7 +110,6 @@ Component({
                             wx.showToast({
                                 title: "登录成功"
                             })
-                            console.log(res)
                             e.globalData.userInfo =res,wx.setStorageSync("userInfo", res.data.userInfo);
                             that.loginSuccess(res.data.userInfo)
                         }

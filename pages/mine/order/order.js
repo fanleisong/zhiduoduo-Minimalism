@@ -54,7 +54,7 @@ Page({
         console.log("456");
         var i = wx.getStorageSync("city"), s = this, n = "";
         n = "commple" == s.data.typeCommplte ? s.data.allPage : "" == a ? s.data.allPage : s.data.finishPage, 
-        t.Util.ajax(i.interfaceUrl + "wxWeb/find_my_orders.do", "POST", {
+        t.Util.ajax(i.interfaceUrl + "order/list", "POST", {
             openid: wx.getStorageSync("userInfo").openid,
             orderStatus: a,
             pageNum: n,
@@ -70,6 +70,7 @@ Page({
             var n = s.data.allList, o = s.data.finishList;
             i.data.forEach(function(i) {
                 var r = "" == a ? t.Util.formatTime(new Date(i.subTime)) : t.Util.formatTime(new Date(i.completeTime));
+                console.log(i.wasteTypeOrderRelaList);
                 i.wasteTypeOrderRelaList.map(function(t) {
                     t.money = parseFloat(t.money), t.weight = parseFloat(t.weight), t.total = Math.round(t.money * t.realWeight * 100) / 100;
                 });

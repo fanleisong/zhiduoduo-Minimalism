@@ -157,7 +157,7 @@ App({
             t.reverseGeocoder({
                 location: n,
                 success: function(t) {
-                    console.log(t), e(t);
+                   e(t);
                 },
                 fail: function(t) {
                     o(t);

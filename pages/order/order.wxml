@@ -43,7 +43,7 @@
         <view class="flex-sub text-center">
             <view class="solid-bottom text-sm padding-xs">
                 <text class="text-gray">确认下单将自动默认：</text>
-                <navigator class="text-gray" url="/pages/order/clause/clause">《纸先生上门回收免责条款》</navigator>
+                <navigator class="text-gray" url="/pages/order/clause/clause">《纸多多上门回收免责条款》</navigator>
             </view>
         </view>
     </view>
