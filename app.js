@@ -270,8 +270,8 @@ App({
                     n.Util.ajax(t.interfaceUrl + "auth/loginByWeixin", "POST", {
                         code: e.code,
                     }, !0).then(function(t) {
-                        console.log(t)
-                        t.errno==0 ? wx.setStorageSync("userInfo", t.data) : wx.setStorageSync("userInfo", "");
+                    
+                        t.errno==0 ? wx.setStorageSync("userInfo", t.data.userInfo) : wx.setStorageSync("userInfo", "");
                     }).catch(function(t) {
                         console.log(t);
                     });

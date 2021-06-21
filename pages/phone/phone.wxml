@@ -8,7 +8,7 @@
             <text>客服电话</text>
         </view>
         <view class="action">
-            <text>{{detail.phone}}</text>
+            <text>18234134077</text>
         </view>
     </view>
 </view>
