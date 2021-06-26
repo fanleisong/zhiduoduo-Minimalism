@@ -128,13 +128,14 @@ Page({
     formSubmit: function(a) {
         if (0 != this.data.star) {
             var e = wx.getStorageSync("city"), i = this;
-            t.Util.ajax(e.interfaceUrl + "wxWeb/getStar.do", "GET", {
+            t.Util.ajax(e.interfaceUrl + "order/setstar", "POST", {
                 userid: i.data.rateOrder.userid,
                 orderid: i.data.rateOrder.orderId,
                 star: i.data.star,
                 text: a.detail.value.text
             }, !0).then(function(t) {
-                if ("SUCCESS" == t) {
+                console.log(t)
+                if (t.errno==0) {
                     var a = i.data.allList.map(function(t) {
                         return t.orderId == i.data.rateOrder.orderId && (t.star = i.data.star), t;
                     }), e = i.data.finishList.map(function(t) {

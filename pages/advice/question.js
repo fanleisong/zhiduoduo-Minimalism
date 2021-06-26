@@ -23,11 +23,12 @@ Page({
         var s = a.detail.value;
         if ("" == s.phone || /^1[3456789]\d{9}$/.test(s.phone)) if ("" != s.text) if (s.text.length < 5 || s.text.length > 200) e.default.fail("反馈内容请控制在5-200字以内"); else {
             s.openid = wx.getStorageSync("userInfo").openid;
+            console.log(s)
             var n = this.getOpenerEventChannel(), i = wx.getStorageSync("city"), r = this;
             r.setData({
                 disabled: "disabled"
-            }), t.Util.ajax(i.interfaceUrl + "wxWeb/addAdvice.do", "POST", s, !0).then(function(t) {
-                if (t.result) {
+            }), t.Util.ajax(i.interfaceUrl + "advice/add", "POST", s, !0).then(function(t) {
+                if (t.errno==0) {
                     e.default.success("提交成功");
                     var a = {
                         name: s.name,

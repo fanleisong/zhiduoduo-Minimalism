@@ -32,10 +32,10 @@ Component({
                 userInfo: wx.getStorageSync("userInfo")
             });
             var e = wx.getStorageSync("city"), n = this;
-            t.Util.ajax(e.interfaceUrl + "wxWeb/getAdvice.do", "GET", {
+            t.Util.ajax(e.interfaceUrl + "advice/get", "GET", {
                 openid: n.data.userInfo.openid
             }, !0).then(function(t) {
-                if (t.result) {
+                if (t.errno==0) {
                     var e = t.data.map(function(t) {
                         return {
                             text: t.text,

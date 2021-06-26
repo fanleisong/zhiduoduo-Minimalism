@@ -12,9 +12,10 @@ Page({
             pageLength: a.length
         });
         var i = wx.getStorageSync("city"), n = this;
-        e.Util.ajax(i.interfaceUrl + "wxWeb/getPriceListNew.do", "GET", null, !0).then(function(e) {
-            if (e.result) {
-                var t = void 0 == e.data.configList[1].wxValue ? "" : e.data.configList[1].wxValue, a = e.data.priceList.map(function(e) {
+        e.Util.ajax(i.interfaceUrl + "waste/getprice", "GET", null, !0).then(function(e) {
+            if (e.errno==0) {
+                console.log(e)
+                a = e.data.map(function(e) {
                     return {
                         wasteName: e.wasteName,
                         price: e.price,

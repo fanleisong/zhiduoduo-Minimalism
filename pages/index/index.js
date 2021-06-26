@@ -16,10 +16,10 @@ Component({
             url: "/pages/phone/phone",
             text: "客服电话"
         }, {
-            img: "/images/car.png",
-            url: "/pages/gps/gps",
-            text: "附近车辆"
-        }, {
+        //     img: "/images/car.png",
+        //     url: "/pages/gps/gps",
+        //     text: "附近车辆"
+        // }, {
             img: "/images/refuse.png",
             url: "/pages/refuses/refuses",
             text: "分类知识"

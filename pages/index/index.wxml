@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-white" isLocation="{{true}}">
     <view slot="locationText">{{cityName}}</view>
-    <view slot="content">纸多多极简生活</view>
+    <view slot="content">纸多多回收站</view>
 </cu-custom>
 <view class="bg-img bg-white"></view>
 <view class="cu-bar">

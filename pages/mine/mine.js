@@ -16,31 +16,7 @@ Component({
             icon: "cuIcon-text text-sb",
             img: "",
             text: "我的订单"
-        }, {
-            url: "/pages/mine/points/points",
-            type: "icon",
-            icon: "cuIcon-moneybag text-sb",
-            img: "",
-            text: "我的积分"
-        }, {
-            url: "/pages/mine/points/sharePoints",
-            type: "icon",
-            icon: "cuIcon-moneybag text-sb",
-            img: "",
-            text: "分享积分"
-        }, {
-            url: "/pages/mine/balance/balance",
-            type: "icon",
-            icon: "cuIcon-recharge text-sb",
-            img: "",
-            text: "我的余额"
-        }, {
-            url: "/pages/mine/withdraw/withdraw",
-            type: "icon",
-            icon: "cuIcon-redpacket text-sb",
-            img: "",
-            text: "提现记录"
-        } ]
+        }]
     },
     attached: function() {
         console.log(wx.getStorageSync("userInfo"))
