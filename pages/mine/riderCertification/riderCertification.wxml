@@ -1,0 +1,73 @@
+<view class="wrapper" wx:if="{{issq==0}}">
+    <form bindsubmit="qishouTJ">
+        <view class="info">
+            <text>姓名</text>
+            <input name="qname" placeholder="请输入您的真实姓名"></input>
+        </view>
+        <view class="info">
+            <text>性别</text>
+            <picker bindchange="bindPickerChange" class="picker" range="{{sexArray}}" value="{{sexIndex}}">
+                <view>
+                    <text>{{sexArray[sexIndex]}}</text>
+                    <image src="../../../images/right_icon.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="info">
+            <text>联系方式</text>
+            <input name="qmobile" placeholder="请输入您的手机号"></input>
+        </view>
+      <!--  <view class="info">
+            <text>地区运营商</text>
+            <picker bindchange="bindPickerChange2" class="picker" range="{{yysArray}}" rangeKey="cname" value="{{yysIndex}}">
+                <view>
+                    <text>{{yysArray[yysIndex].cname}}</text>
+                    <image src="../../../images/right_icon.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="info">
+            <text>现居住地</text>
+            <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" class="picker" mode="multiSelector" range="{{multiArray1}}" value="{{multiIndex}}">
+                <view>
+                    <text>{{multiArray[0][ multiIndex[0] ]}}{{multiArray[1][ multiIndex[1] ]}}{{multiArray[2][ multiIndex[2] ]}}</text>
+                    <image src="../../../images/right_icon.png"></image>
+                </view>
+            </picker>
+        </view>-->
+        <view class="info">
+            <text>详细地址</text>
+            <input name="nowaddress" placeholder="请输入您的详细住址"></input>
+        </view>
+        <view class="id_wrapper">
+            <text>上传身份证照片</text>
+            <view>
+                <image bindtap="chooseImage" data-type="1" mode="apectFill" src="{{sfimgzmshow}}"></image>
+                <image bindtap="chooseImage" data-type="2" mode="apectFill" src="{{sfimgfmshow}}"></image>
+            </view>
+        </view>
+        <button class="btn" formType="submit">立即申请</button>
+    </form>
+</view>
+<view class="examine_wrapper" wx:if="{{issq==1}}">
+    <view class="examine">
+        <image mode="aspectFill" src="../../../images/examine_icon1.png"></image>
+        <text>审核中</text>
+    </view>
+    <button bindtap="backBtn" class="btn mar_t0">返回</button>
+</view>
+<view class="examine_wrapper" wx:if="{{issq==2}}">
+    <view class="examine">
+        <image mode="aspectFill" src="../../../images/examine_icon3.png"></image>
+        <text>审核通过！</text>
+    </view>
+    <button bindtap="backBtn" class="btn mar_t0">返回</button>
+</view>
+<view class="examine_wrapper" wx:if="{{issq==3}}">
+    <view class="examine">
+        <image mode="aspectFill" src="../../../images/examine_icon2.png"></image>
+        <text>审核失败！</text>
+        <text>{{breason}}</text>
+    </view>
+    <button bindtap="resetSH" class="btn mar_t0">重新审核</button>
+</view>

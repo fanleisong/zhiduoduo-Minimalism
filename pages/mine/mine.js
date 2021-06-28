@@ -16,10 +16,21 @@ Component({
             icon: "cuIcon-text text-sb",
             img: "",
             text: "我的订单"
+        },{
+            url: "/pages/mine/riderCertification/riderCertification",
+            type: "icon",
+            icon: "cuIcon-text text-sb",
+            img: "",
+            text: "注册回收员"
+        },{
+            url: "/pages/mine/apply/apply",
+            type: "icon",
+            icon: "cuIcon-moneybag text-sb",
+            img: "",
+            text: "推广纸多多，一起极简生活"
         }]
     },
     attached: function() {
-        console.log(wx.getStorageSync("userInfo"))
         var t = this;
         "" != wx.getStorageSync("userInfo") ? this.setData({
             userInfo: wx.getStorageSync("userInfo"),
@@ -40,7 +51,6 @@ Component({
         });
     },
     methods: {
-        
         goLogin: function() {
             let that = this;
             wx.login({
@@ -57,7 +67,6 @@ Component({
             wx.getUserProfile({
                 desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
                 success: (res) => {
-                    console.log(res)
                     this.setData({
                         userInfo: res.userInfo,
                         hasUserInfo: !0
@@ -115,7 +124,6 @@ Component({
     },
     pageLifetimes: {
         show: function() {
-            console.log(this.data.userInfo)
             "function" == typeof this.getTabBar && this.getTabBar() && this.getTabBar().setData({
                 selected: 3
             }), "" != wx.getStorageSync("userInfo") && this.setData({

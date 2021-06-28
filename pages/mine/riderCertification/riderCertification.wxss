@@ -1,0 +1,103 @@
+.wrapper {
+    padding: 0 32rpx;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    padding: 24rpx 0;
+    border-bottom: 2rpx solid #E5E5E5;
+}
+
+.info text {
+    font-size: 24rpx;
+    color: #333333;
+    margin-right: 20rpx;
+}
+
+.info input {
+    flex: 1;
+    font-size: 28rpx;
+    color: #333;
+    text-align: right;
+}
+
+.id_wrapper text {
+    font-size: 28rpx;
+    color: #333333;
+    display: block;
+    margin: 40rpx 0 30rpx;
+}
+
+.id_wrapper view {
+    display: flex;
+}
+
+.id_wrapper view image {
+    width: 256rpx;
+    height: 200rpx;
+    margin-right: 48rpx;
+}
+
+.picker {
+    flex: 1;
+}
+
+.picker view {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.picker view text {
+    flex: 1;
+    text-align: right;
+    font-size: 28rpx;
+    color: #333;
+    margin-right: 10rpx;
+}
+
+.picker image {
+    width: 16rpx;
+    height: 20rpx;
+}
+
+.btn {
+    width: 320rpx;
+    height: 88rpx;
+    background: #21c761;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    color: #333333;
+    margin: 180rpx auto 160rpx;
+    padding: 0;
+    line-height: 88rpx;
+}
+
+.btn:not([size='mini']) {
+    width: 320rpx;
+    height: 88rpx;
+    min-height: 88rpx;
+}
+
+.examine {
+    padding: 170rpx 0 180rpx;
+}
+
+.examine image {
+    width: 288rpx;
+    height: 224rpx;
+    margin: 0 auto 40rpx;
+}
+
+.examine text {
+    display: block;
+    text-align: center;
+    font-size: 32rpx;
+    color: #666666;
+    line-height: 44rpx;
+}
+
+.mar_t0 {
+    margin-top: 0;
+}

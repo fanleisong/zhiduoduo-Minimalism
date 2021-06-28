@@ -69,6 +69,7 @@ Page({
             }));
             var n = s.data.allList, o = s.data.finishList;
             i.data.forEach(function(i) {
+                console.log(i)
                 var r = "" == a ? t.Util.formatTime(new Date(i.subTime)) : t.Util.formatTime(new Date(i.completeTime));
                 console.log(i.wasteTypeOrderRelaList);
                 i.wasteTypeOrderRelaList.map(function(t) {
