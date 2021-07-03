@@ -26,7 +26,8 @@
     "pages/game/game",
     "pages/refuses/details",
     "pages/clerkorders/order",
-    "pages/phone/phone"
+    "pages/phone/phone",
+    "pages/mine/riderCertification/riderCertification"
   ],
   "window": {
     "backgroundTextStyle": "light",

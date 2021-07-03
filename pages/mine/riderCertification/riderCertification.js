@@ -28,7 +28,6 @@ Page({
     },
     onShow: function() {},
     getInfo: function() {
-        console.log("------------------------------")
         var e = this;
         wx.showLoading({
             mask: !0
@@ -141,13 +140,13 @@ Page({
         }); else {
             var o = t.data.sfimgzm, s = t.data.sfimgfm, n = t.data.multiArray, d = t.data.multiIndex, l = n[0][d[0]] + "/" + n[1][d[1]] + "/" + n[2][d[2]], r = o + "," + s;
             console.log(r), wx.request({
-                url: wx.getStorageSync("city").interfaceUrl+'user/info',
+                url: wx.getStorageSync("city").interfaceUrl+'user/qishou',
                 method: "POST",
                 header: {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
                 data: {
-                    id: t.data.id,
+                    id:  wx.getStorageSync("userInfo").id,
                     type: "2",
                     qname: i.qname,
                     qsex: t.data.sexArray[t.data.sexIndex],
@@ -155,17 +154,17 @@ Page({
                     city: l,
                     nowaddress: i.nowaddress,
                     qimages: r,
-                    yyid: t.data.yysArray[t.data.yysIndex].id
+                  //  yyid: t.data.yysArray[t.data.yysIndex].id
                 },
                 success: function(a) {
-                    console.log(a), wx.hideLoading(), 1 == a.data.code ? (wx.showToast({
-                        title: a.data.msg,
+                    console.log(a), wx.hideLoading(), 0 == a.data.errno ? (wx.showToast({
+                        title: a.data.data.msg,
                         mask: !0,
                         icon: "none"
                     }), setTimeout(function() {
                         wx.navigateBack();
-                    }, 1e3)) : wx.showToast({
-                        title: a.data.msg,
+                    }, 2000)) : wx.showToast({
+                        title: a.data.data.msg,
                         mask: !0,
                         icon: "none"
                     });
@@ -273,24 +272,24 @@ Page({
                 "Content-Type": "multipart/form-data"
             },
             success: function(t) {
-                console.log(t);
-                // var i = JSON.parse(t.data);
-                // "1" == a.type ? e.setData({
-                //     sfimgzm: i.data.url1,
-                //     sfimgzmshow: i.data.url
-                // }) : e.setData({
-                //     sfimgfm: i.data.url1,
-                //     sfimgfmshow: i.data.url
-                // }), wx.showToast({
-                //     title: i.msg,
-                //     icon: "none"
-                // });
+                console.log(t.data);
+               var i = JSON.parse(t.data);
+                "1" == a.type ? e.setData({
+                    sfimgzm: i.data.url1,
+                    sfimgzmshow: i.data.url1
+                }) : e.setData({
+                    sfimgfm: i.data.url1,
+                    sfimgfmshow: i.data.url1
+                }), wx.showToast({
+                    title: t.msg,
+                    icon: "none"
+                });
             },
             fail: function(a) { 
                 console.log("fail:");
             },
-            complete: function() {
-                console.log("cc");
+            complete: function(t) {
+               
             }
         });
     }
