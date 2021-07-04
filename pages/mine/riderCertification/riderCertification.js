@@ -114,6 +114,7 @@ Page({
     },
     qishouTJ: function(e) {
         console.log("form发生了submit事件，携带数据为：", e.detail.value);
+        const  phoneRexp = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/
         var t = this, i = e.detail.value;
         if (wx.showLoading({
             mask: !0
@@ -123,6 +124,10 @@ Page({
             icon: "none"
         }); else if ("" == i.qmobile) wx.showToast({
             title: "请输入联系方式",
+            mask: !0,
+            icon: "none"
+        }); else if (!phoneRexp.test(i.qmobile)) wx.showToast({
+            title: "手机号格式不正确",
             mask: !0,
             icon: "none"
         }); else if ("" == i.nowaddress) wx.showToast({
